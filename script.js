@@ -1,3 +1,6 @@
+computerScore = 0
+humanScore = 0
+
 function getComputerChoice() {
     // generate a random integer from 0 to 2
     computerChoice = Math.floor(Math.random() * 3)
