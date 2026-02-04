@@ -10,14 +10,15 @@ const scissorsBtn = document.createElement("button");
 scissorsBtn.textContent = "Scissors";
 
 const div = document.createElement("div");
-
 const score = document.createElement("p");
+const results = document.createElement("p");
 
 container.appendChild(rockBtn);
 container.appendChild(paperBtn);
 container.appendChild(scissorsBtn);
 container.appendChild(div);
 container.appendChild(score);
+container.appendChild(results);
 
 function getComputerChoice() {
     // generate a random integer from 0 to 2
@@ -88,15 +89,19 @@ function playGame() {
         }
 
         score.textContent = `Your score: ${humanScore}\n Computer score: ${computerScore}`;
+
+        if (humanScore == 5) {
+            results.textContent = "Human wins!";
+            humanScore = 0;
+            computerScore = 0;
+        } else if (computerScore == 5){
+            results.textContent = "Computer wins!";
+            humanScore = 0;
+            computerScore = 0;
+        } else {
+            results.textContent = "No one has won yet!";
+        }
     }
-    
-    // if (humanScore > computerScore) {
-    //     console.log("You win!")
-    // } else if (computerScore > humanScore){
-    //     console.log("You lose!")
-    // } else {
-    //     console.log("It's a tie. No one wins!")
-    // }
 }
 
 playGame();
