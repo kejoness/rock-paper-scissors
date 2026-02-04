@@ -12,7 +12,9 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    humanChoice = prompt("Rock, paper, or scissors?").toLowerCase()
+    rockBtn = document.createElement("button");
+    paperBtn = document.createElement("button");
+    scissorsBtn = document.createElement("button");
 
     return humanChoice
 }
@@ -59,10 +61,6 @@ function playGame() {
         }
 
         gameRound++
-    }
-
-    while (gameRound < 5) {
-        playRound()
     }
 
     console.log(`Your score: ${humanScore}\n Computer score: ${computerScore}`)
